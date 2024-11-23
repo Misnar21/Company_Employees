@@ -40,6 +40,9 @@ namespace CompanyEmployees.Extensions
 									config.ReturnHttpNotAcceptable = true;
 					})
 					.AddXmlDataContractSerializerFormatters()
+					.AddCustomCSVFormatter()
 					.AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly);
+		public static IMvcBuilder AddCustomCSVFormatter(this IMvcBuilder builder) =>
+			 builder.AddMvcOptions(config => config.OutputFormatters.Add(new CsvOutputFormatter()));
 	}
 }
