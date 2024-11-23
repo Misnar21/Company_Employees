@@ -1,5 +1,7 @@
 # Custom
 .vs/
+bin/
+obj/
 
 # Prerequisites
 *.d
