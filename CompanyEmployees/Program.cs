@@ -14,6 +14,7 @@ builder.Services.ConfigureLoggerService();
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureSqlContext(builder.Configuration);
+builder.Services.ConfigureApiBehaviourOptions();
 builder.Services.ConfigureControllers();
 //builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

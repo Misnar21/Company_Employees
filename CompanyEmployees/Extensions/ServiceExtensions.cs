@@ -5,6 +5,7 @@ using LoggerService;
 using Microsoft.Extensions.Options;
 using Repository;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CompanyEmployees.Extensions
 {
@@ -34,6 +35,11 @@ namespace CompanyEmployees.Extensions
 		public static void ConfigureSqlContext(this IServiceCollection services, IConfiguration configuration) =>
 			services.AddDbContext<RepositoryContext>(opts =>
 				opts.UseSqlServer(configuration.GetConnectionString("sqlConnection")));
+		public static void ConfigureApiBehaviourOptions(this IServiceCollection services) =>
+			services.Configure<ApiBehaviorOptions>(options =>
+			{
+				options.SuppressModelStateInvalidFilter = true;
+			});
 		public static void ConfigureControllers(this IServiceCollection services) =>
 			services.AddControllers(config => { 
 									config.RespectBrowserAcceptHeader = true;
