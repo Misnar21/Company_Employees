@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,4 +13,6 @@ namespace Shared.DTOs
 		public string? Name { get; init; }
 		public string? FullAddress { get; init; }
 	}
+
+	public record CompanyForCreationDTO(string name, string Address, string Country);
 }
