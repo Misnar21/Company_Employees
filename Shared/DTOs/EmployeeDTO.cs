@@ -7,4 +7,6 @@ using System.Threading.Tasks;
 namespace Shared.DTOs
 {
 	public record EmployeeDTO(Guid Id, string Name, int Age, string Position);
+
+	public record EmployeeForCreationDTO(string name, int Age, string Position);
 }

@@ -10,5 +10,6 @@ namespace Service.Contracts
 	public interface IEmployeeService
 	{
 		IEnumerable<EmployeeDTO> GetEmployees(Guid companyId, bool trackChanges);
+		EmployeeDTO CreateEmployeeForCompany(Guid companyId, EmployeeForCreationDTO employee, bool trackChanges);
 	}
 }
